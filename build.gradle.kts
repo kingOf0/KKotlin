@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version "1.7.20"
     id ("com.github.johnrengelman.shadow") version "7.0.0"
-    kotlin("plugin.serialization") version "1.6.10"
+    kotlin("plugin.serialization") version "1.7.20"
 }
 
 group = "com.kingOf0"
@@ -21,12 +21,12 @@ dependencies {
     //spigot api
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 
-    implementation("com.github.cryptomorin:XSeries:8.6.2")
+    implementation("com.github.cryptomorin:XSeries:9.2.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api-plugin:2.11.0-SNAPSHOT")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    implementation("de.tr7zw:item-nbt-api-plugin:2.11.1-SNAPSHOT")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    compileOnly("org.jetbrains.kotlin:kotlin-stdlib:1.7.20")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
