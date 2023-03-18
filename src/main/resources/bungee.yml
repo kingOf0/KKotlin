@@ -1,0 +1,4 @@
+main: com.kingOf0.kotlin.KKotlinBungee
+name: KKotlin
+version: ${version}
+author: kingOf0

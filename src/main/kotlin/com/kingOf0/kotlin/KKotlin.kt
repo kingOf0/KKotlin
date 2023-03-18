@@ -1,5 +1,6 @@
 package com.kingOf0.kotlin
 
+import com.kingOf0.kotlin.KKotlinManager.plugins
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -7,25 +8,12 @@ import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.plugin.Plugin
 import org.bukkit.plugin.java.JavaPlugin
 
+
 class KKotlin : JavaPlugin(), Listener {
 
     private val message = mutableListOf("This server is running Kotlin! ${description.version} by ${description.authors}", "Server Version: ${Bukkit.getVersion()} Bukkit Version: ${Bukkit.getBukkitVersion()} - Kotlin Version: ${KotlinVersion.CURRENT}")
 
     override fun onEnable() {
-        val plugins = listOf(
-            "KFarmer",
-            "KSpawners",
-            "KCombatLog",
-            "KFactions",
-            "KClaim",
-            "KAnnouncer",
-            "KDailyRewards",
-            "KModerations",
-            "KRoulette",
-            "KRankUp",
-            "KConomy",
-            "KLands"
-        )
         val pluginManager = server.pluginManager
         Bukkit.getScheduler().runTaskLater(this, {
             pluginManager.plugins.filter { plugins.contains(it.name) }.forEach {
