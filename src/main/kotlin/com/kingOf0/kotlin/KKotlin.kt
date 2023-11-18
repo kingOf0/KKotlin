@@ -11,11 +11,14 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class KKotlin : JavaPlugin(), Listener {
 
-    private val message = mutableListOf("This server is running Kotlin! ${description.version} by ${description.authors}", "Server Version: ${Bukkit.getVersion()} Bukkit Version: ${Bukkit.getBukkitVersion()} - Kotlin Version: ${KotlinVersion.CURRENT}")
+    private val message = mutableListOf(
+        "This server is running Kotlin! ${description.version} by ${description.authors}",
+        "Server Version: ${Bukkit.getVersion()} Bukkit Version: ${Bukkit.getBukkitVersion()} - Kotlin Version: ${KotlinVersion.CURRENT}"
+    )
 
     override fun onEnable() {
         val pluginManager = server.pluginManager
-        Bukkit.getScheduler().runTaskLater(this, {
+        Bukkit.getScheduler().runTaskLater(this, Runnable {
             pluginManager.plugins.filter { plugins.contains(it.name) }.forEach {
                 message.add(" > §a${it.name} §7- §a${it.description.version}")
 
