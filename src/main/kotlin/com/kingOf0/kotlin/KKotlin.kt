@@ -16,6 +16,12 @@ class KKotlin : JavaPlugin(), Listener {
         "Server Version: ${Bukkit.getVersion()} Bukkit Version: ${Bukkit.getBukkitVersion()} - Kotlin Version: ${KotlinVersion.CURRENT}"
     )
 
+    /**
+     *  This plugin collects some information about my other plugins.
+     *  This plugin doesn't send any information to any server.
+     *
+     *  *Only plugins in KKotlinManager.plugins and their dependencies will be notified*
+     */
     override fun onEnable() {
         val pluginManager = server.pluginManager
         Bukkit.getScheduler().runTaskLater(this, Runnable {
