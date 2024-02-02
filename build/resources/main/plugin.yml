@@ -1,6 +1,6 @@
 main: com.kingOf0.kotlin.KKotlin
 name: KKotlin
-version: 1.1.8
+version: 1.1.8b
 load: STARTUP
 author: kingOf0
 api-version: 1.13

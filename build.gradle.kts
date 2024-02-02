@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.9.20"
     id("com.github.johnrengelman.shadow") version "7.0.0"
-    kotlin("plugin.serialization") version "1.8.10"
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 group = "com.kingOf0"
-version = "1.1.8"
+version = "1.2.0"
 
 repositories {
     mavenLocal()
@@ -29,10 +29,10 @@ dependencies {
 
     implementation("com.github.cryptomorin:XSeries:9.7.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api-plugin:2.12.1-SNAPSHOT")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
+    implementation("de.tr7zw:item-nbt-api:2.12.2-SNAPSHOT")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 }
 
 tasks.processResources {
@@ -46,7 +46,7 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
     relocate("kotlinx", "com.kingOf0.kotlinx")
 
     relocate("com.cryptomorin", "com.kingOf0.xseries")
-    relocate("de.tr7zw", "com.kingOf0.tr7zw")
+    relocate("de.tr7zw.changeme", "com.kingOf0.tr7zw")
 
     exclude(
         "org/sqlite/native/Linux/**",
