@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "2.0.0-RC3"
     id("com.github.johnrengelman.shadow") version "7.0.0"
-    kotlin("plugin.serialization") version "1.9.20"
+    kotlin("plugin.serialization") version "2.0.0-RC3"
 }
 
 group = "com.kingOf0"
-version = "1.2.0"
+version = "1.2.2"
 
 repositories {
     mavenLocal()
@@ -29,10 +29,10 @@ dependencies {
 
     implementation("com.github.cryptomorin:XSeries:9.7.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api:2.12.2-SNAPSHOT")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("de.tr7zw:item-nbt-api:+")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
 }
 
 tasks.processResources {
