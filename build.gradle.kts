@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.kingOf0"
-version = "1.2.3"
+version = "1.2.3b"
 
 repositories {
     mavenLocal()
@@ -27,7 +27,7 @@ dependencies {
     //bungee
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
 
-    implementation("com.github.cryptomorin:XSeries:11.2.0.1")
+    implementation("com.github.cryptomorin:XSeries:11.2.2")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
     implementation("de.tr7zw:item-nbt-api:+")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
@@ -56,7 +56,6 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
         "org/sqlite/native/DragonFlyBSD/**",
         "org/sqlite/native/Windows/x86/**",
         "org/sqlite/native/Windows/armv7/**",
-        "com/cryptomorin/xseries/particles/**",
         "com/cryptomorin/xseries/XSound.class",
         "javassist/**",
         "io/leangen/**",
