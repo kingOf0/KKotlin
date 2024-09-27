@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.kingOf0"
-version = "1.2.3b"
+version = "1.2.4"
 
 repositories {
     mavenLocal()
