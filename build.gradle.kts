@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.kingOf0"
-version = "1.2.5"
+version = "1.2.6"
 
 repositories {
     mavenLocal()
@@ -27,9 +27,9 @@ dependencies {
     //bungee
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
 
-    implementation("com.github.cryptomorin:XSeries:11.3.0")
+    implementation("com.github.cryptomorin:XSeries:12.1.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api:+")
+    implementation("de.tr7zw:item-nbt-api-plugin:2.14.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
