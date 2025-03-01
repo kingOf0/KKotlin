@@ -15,24 +15,21 @@ repositories {
     maven("https://jitpack.io")
     maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://repo.bg-software.com/repository/api/")
-
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-    maven("https://oss.sonatype.org/content/repositories/snapshots") // This lets gradle find the BungeeCord files online
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 dependencies {
-    //spigot api
-//    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
-    compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    //bungee
+    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
+
+    api("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
 
     implementation("com.github.cryptomorin:XSeries:12.1.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
     implementation("de.tr7zw:item-nbt-api-plugin:2.14.1-SNAPSHOT")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
 }
 
 tasks.processResources {
@@ -44,7 +41,6 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
 
     relocate("kotlin", "com.kingOf0.kotlin")
     relocate("kotlinx", "com.kingOf0.kotlinx")
-
     relocate("com.cryptomorin", "com.kingOf0.xseries")
     relocate("de.tr7zw.changeme", "com.kingOf0.tr7zw")
 
@@ -59,9 +55,11 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
         "com/cryptomorin/xseries/XSound.class",
         "javassist/**",
         "io/leangen/**",
-        "LICENSE*",
-        "META-INF/**"
+        "LICENSE*"
     )
+
+    exclude("META-INF/**")
+    include("META-INF/services/**")
 }
 
 tasks.withType<KotlinCompile> {
