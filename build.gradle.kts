@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.kingOf0"
-version = "1.2.6"
+version = "1.2.7"
 
 repositories {
     mavenLocal()
@@ -17,7 +17,7 @@ repositories {
     maven("https://repo.bg-software.com/repository/api/")
 
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-    maven("https://oss.sonatype.org/content/repositories/snapshots") // This lets gradle find the BungeeCord files online
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 dependencies {
@@ -25,11 +25,15 @@ dependencies {
 //    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     //bungee
-    compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
+    compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT") {
+        exclude(group = "org.yaml", module = "snakeyaml")
+        exclude(group = "com.mojang", module = "brigadier")
+    }
 
     implementation("com.github.cryptomorin:XSeries:12.1.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api-plugin:2.14.1-SNAPSHOT")
+    compileOnly("de.tr7zw:item-nbt-api-plugin:2.15.0")
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
@@ -46,6 +50,7 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
     relocate("kotlinx", "com.kingOf0.kotlinx")
 
     relocate("com.cryptomorin", "com.kingOf0.xseries")
+//    relocate("de.tr7zw", "com.kingOf0.tr7zw")
     relocate("de.tr7zw.changeme", "com.kingOf0.tr7zw")
 
     exclude(

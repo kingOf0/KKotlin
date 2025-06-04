@@ -1,6 +1,7 @@
 package com.kingOf0.kotlin
 
 import com.kingOf0.kotlin.KKotlinManager.plugins
+import de.tr7zw.nbtapi.NBT
 import net.md_5.bungee.api.ProxyServer
 import net.md_5.bungee.api.chat.TextComponent
 import net.md_5.bungee.api.event.ServerConnectEvent
@@ -18,6 +19,8 @@ class KKotlinBungee : Plugin(), Listener {
     )
 
     override fun onEnable() {
+
+        NBT.preloadApi()
 
         val pluginManager = proxy.pluginManager
         proxy.scheduler.schedule(this, {
