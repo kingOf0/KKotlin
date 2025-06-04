@@ -32,7 +32,7 @@ dependencies {
 
     implementation("com.github.cryptomorin:XSeries:12.1.0")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    compileOnly("de.tr7zw:item-nbt-api-plugin:2.15.0")
+    implementation("de.tr7zw:item-nbt-api-plugin:2.15.0")
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
