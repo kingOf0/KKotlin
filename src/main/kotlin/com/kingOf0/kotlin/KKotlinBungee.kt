@@ -1,7 +1,7 @@
 package com.kingOf0.kotlin
 
 import com.kingOf0.kotlin.KKotlinManager.plugins
-import de.tr7zw.nbtapi.NBT
+import de.tr7zw.changeme.nbtapi.NBT
 import net.md_5.bungee.api.ProxyServer
 import net.md_5.bungee.api.chat.TextComponent
 import net.md_5.bungee.api.event.ServerConnectEvent
