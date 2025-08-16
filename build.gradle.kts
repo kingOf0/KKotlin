@@ -1,13 +1,11 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "2.0.0-RC3"
+    kotlin("jvm") version "2.2.10"
     id("com.github.johnrengelman.shadow") version "7.0.0"
-    kotlin("plugin.serialization") version "2.0.0-RC3"
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 group = "com.kingOf0"
-version = "1.2.7"
+version = "1.2.9"
 
 repositories {
     mavenLocal()
@@ -24,6 +22,7 @@ dependencies {
     //spigot api
 //    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+
     //bungee
     compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT") {
         exclude(group = "org.yaml", module = "snakeyaml")
@@ -34,9 +33,9 @@ dependencies {
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
     implementation("de.tr7zw:item-nbt-api:2.15.0")
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.10")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 }
 
 tasks.processResources {
@@ -69,6 +68,3 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>() {
     )
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
