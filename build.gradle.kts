@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.kingOf0"
-version = "1.2.9"
+version = "1.3.0"
 
 repositories {
     mavenLocal()
@@ -30,9 +30,9 @@ dependencies {
         exclude(group = "com.mojang", module = "brigadier")
     }
 
-    implementation("com.github.cryptomorin:XSeries:13.5.1")
+    implementation("com.github.cryptomorin:XSeries:13.7.1")
     implementation("org.xerial:sqlite-jdbc:3.36.0.3")
-    implementation("de.tr7zw:item-nbt-api:2.15.3")
+    implementation("de.tr7zw:item-nbt-api:2.15.7")
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-RC3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0-RC")
